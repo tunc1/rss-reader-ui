@@ -7,7 +7,7 @@ export default function App()
 	const [feeds,setFeeds]=useState([]);
 	useEffect(()=>
 	{
-		const url="/api/rss"+location.search;
+		const url=process.env.REACT_APP_BACKEND_APP_URL+"/api/rss"+location.search;
 		fetch(url)
 		.then(res=>res.json())
 		.then(setFeeds);
